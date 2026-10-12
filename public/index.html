@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Gemini</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/chat.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <span class="wordmark">Gemini</span>
+      <button id="new-chat" class="btn-text" type="button">New chat</button>
+    </header>
+
+    <main id="log" class="log" role="log" aria-live="polite" aria-label="Conversation" tabindex="0">
+      <div id="empty" class="empty">
+        <h1>How can I help?</h1>
+        <p>Ask a question or describe what you need.</p>
+      </div>
+      <div id="messages" class="messages"></div>
+      <button id="jump" class="jump" type="button" hidden aria-label="Scroll to latest message">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </button>
+    </main>
+
+    <footer class="composer-wrap">
+      <form id="composer" class="composer" autocomplete="off">
+        <label for="input" class="sr-only">Message</label>
+        <textarea id="input" rows="1" dir="auto" placeholder="Message" maxlength="4000"></textarea>
+        <button id="send" class="send" type="submit" aria-label="Send message" disabled></button>
+      </form>
+      <p class="note">Gemini can make mistakes. Check important information.</p>
+    </footer>
+  </div>
+</body>
+</html>
